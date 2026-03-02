@@ -1,0 +1,15 @@
+{
+  "val_data_path": "data/calib/dock_calib.csv",
+  "test_data_path": "data/generated_samples/dock_test_molcraft.csv",
+  "output_dir": "results/molcraft",
+  "skip_extraction": true,
+  "kde_type": "negative_only",
+  "kde_bandwidths": [1],
+  "density_threshold": null,
+  "property_threshold": 7.5,
+  "alpha": "0.05",
+  "max_samples_per_group": 10,
+  "permutations": 10000,
+  "statistic": "max",
+  "seed": 42
+}

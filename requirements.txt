@@ -1,0 +1,8 @@
+# Install with: pip install -r requirements.txt
+# For design/certification/budget analysis (feature extraction uses chemprop MPNN).
+torch>=1.9
+numpy
+pandas
+scikit-learn
+tqdm
+chemprop

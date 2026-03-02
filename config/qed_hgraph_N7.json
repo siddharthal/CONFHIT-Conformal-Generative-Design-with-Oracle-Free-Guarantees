@@ -1,0 +1,15 @@
+{
+  "val_data_path": "data/calib/qed_calib.csv",
+  "test_data_path": "data/generated_samples/qed_hgraph.csv",
+  "output_dir": "results/qed_hgraph",
+  "feature_model_checkpoint": "trained_models/binary_qed.ckpt",
+  "kde_type": "negative_only",
+  "kde_bandwidths": [1],
+  "density_threshold": 5,
+  "property_threshold": 0.5,
+  "alpha": "0.05",
+  "max_samples_per_group": 7,
+  "permutations": 10000,
+  "statistic": "max",
+  "seed": 42
+}
