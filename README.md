@@ -1,6 +1,6 @@
 # CONFHIT: Conformal Generative Design with Oracle-Free Guarantees
 
-CONFHIT is a model-agnostic framework that provides **validity guarantees** for conditional generative models in resource-constrained settings (e.g. drug discovery) **without oracle access**. It addresses:
+[ConfHit](https://arxiv.org/abs/2603.07371) is a model-agnostic framework that provides **validity guarantees** for conditional generative models in resource-constrained settings (e.g. drug discovery) **without oracle access**. It addresses:
 
 1. **Certification** — Given a batch of generated candidates, guarantee at confidence level \(1-\alpha\) that it contains at least one *hit* (e.g. a molecule satisfying a desired property).
 2. **Design** — Refine the batch to a **compact certified set** while preserving that guarantee
@@ -88,12 +88,15 @@ conda run -n chemprop python src/budget_analysis.py --config config/molcraft_N10
 If you use this code, please cite the paper:
 
 ```bibtex
-@inproceedings{laghuvarapuconfhit,
-  title={CONFHIT: Conformal Generative Design with Oracle-Free Guarantees},
-  author={Laghuvarapu, Siddhartha and Jin, Ying and Sun, Jimeng},
-  booktitle={The Fourteenth International Conference on Learning Representations}
+@misc{laghuvarapu2026confhitconformalgenerativedesign,
+      title={ConfHit: Conformal Generative Design with Oracle Free Guarantees}, 
+      author={Siddhartha Laghuvarapu and Ying Jin and Jimeng Sun},
+      year={2026},
+      eprint={2603.07371},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2603.07371}, 
 }
-
 ```
 
 ---
