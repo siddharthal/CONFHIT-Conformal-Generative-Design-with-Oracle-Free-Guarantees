@@ -13,19 +13,6 @@ The method uses **density-ratio weighted conformal p-values** to correct for dis
 
 1. **Conda env** (e.g. `chemprop` with chemprop, torch, pandas, sklearn, tqdm).
 
-2. **Data and model** — Create directories and add the required files:
-
-   **Required files:**
-   - `data/calib/qed_calib.csv`
-   - `data/generated_samples/qed_hgraph.csv`
-   - `data/calib/dock_calib.csv`
-   - `data/generated_samples/dock_test_molcraft.csv`
-   - `trained_models/binary_qed.ckpt` (for QED; Molcraft config uses precomputed features)
-
-   **Molcraft (N=10):** The Molcraft config uses `skip_extraction: true`. The calibration and test CSVs must **already contain** the columns `features` and `score` (e.g. from a previous run). If missing, run once without `skip_extraction` or supply precomputed CSVs.
-
-   For `dock_calib.csv`, the calibration table should have columns `protein_file`, `score`, `vina_score`, `features`, `label` (no extra column such as `train`).
-
 Run all commands from the repo root.
 
 ---
@@ -38,8 +25,6 @@ Run all commands from the repo root.
 Refines each input’s generated batch to a compact certified set (Algorithm 1).
 
 ```bash
-# QED + Hgraph, N=7
-conda run -n chemprop python src/design_main.py --config config/qed_hgraph_N7.json
 
 # Molcraft, N=10 (requires precomputed features; see Setup)
 conda run -n chemprop python src/design_main.py --config config/molcraft_N10.json
@@ -50,7 +35,6 @@ conda run -n chemprop python src/design_main.py --config config/molcraft_N10.jso
 Certifies whether a given batch contains at least one hit at level \(\alpha\) (Section 3.1 in the paper).
 
 ```bash
-conda run -n chemprop python src/certification_main.py --config config/qed_hgraph_N7.json
 conda run -n chemprop python src/certification_main.py --config config/molcraft_N10.json
 ```
 
@@ -59,7 +43,6 @@ conda run -n chemprop python src/certification_main.py --config config/molcraft_
 Budget-constrained allocation across multiple inputs (Section 4.6 / Appendix D in the paper).
 
 ```bash
-conda run -n chemprop python src/budget_analysis.py --config config/qed_hgraph_N7_budget.json
 conda run -n chemprop python src/budget_analysis.py --config config/molcraft_N10_budget.json
 ```
 
